@@ -47,12 +47,6 @@ set_source_files_properties(
     PROPERTIES COMPILE_OPTIONS "-O2"
 )
 
-# Suppress warnings on sqlite3.c (third-party file, not our code)
-if(MSVC)
-    set_source_files_properties(src/db/sqlite3.c PROPERTIES COMPILE_FLAGS "/w")
-else()
-    set_source_files_properties(src/db/sqlite3.c PROPERTIES COMPILE_FLAGS "-w")
-endif()
 
 include(GNUInstallDirs)
 
